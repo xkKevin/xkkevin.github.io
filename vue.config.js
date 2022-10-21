@@ -1,4 +1,5 @@
 module.exports = {
+  transpileDependencies: true,
   pages: {
     index: {
       entry: 'src/main.js', // 入口文件

@@ -14,7 +14,7 @@
           <el-menu-item index="3">Publications</el-menu-item>
         </el-menu>
       </el-header>
-      <div style="margin-bottom: 60px"></div>
+      <div style="margin-bottom: 52px"></div>
       <el-container id="C1" class="panel">
         <el-aside style="padding-top: 30px">
           <el-image
@@ -32,7 +32,7 @@
           </div>
           <div style="font-size: 1rem; font-weight: 300; line-height: 1.25">
             <div>Zhejiang University</div>
-            <el-row type="flex" class="contact" justify="center">
+            <el-row type="flex" style="margin-bottom: 10px" justify="center">
               <a class="icon" href="mailto:kaixiong@zju.edu.cn"
                 ><font-awesome-icon icon="fa-solid fa-envelope"
               /></a>
@@ -63,9 +63,10 @@
             <strong>data wrangling</strong>. I am particularly interested in how
             to assist data workers in understanding the process of data
             transformations.
-            <p style="text-align: right; padding-right: 10px;">
-              "It is only with the heart that one can see rightly; what is essential is invisible to the eye."
-              <br>
+            <p style="text-align: right; padding-right: 10px">
+              "It is only with the heart that one can see rightly; what is
+              essential is invisible to the eye."
+              <br />
               —— <i>The Little Prince</i>
             </p>
           </div>
@@ -118,7 +119,7 @@
               </el-col>
               <el-col
                 :span="17"
-                style="text-align: left; padding: 10px 0 0 28px"
+                style="text-align: left; padding: 8px 0 0 28px"
               >
                 <div class="title">{{ ai.title }}</div>
                 <div class="sub-title">{{ ai.subtitle }}</div>
@@ -159,7 +160,7 @@
       </el-container>
       <el-footer class="panel">
         <div style="padding-top: 20px; font-size: 15px">
-          © 2022 by Kai Xiong
+          © 2022 by Kai Xiong. All Rights Reserved.
         </div>
       </el-footer>
       <el-backtop title="Back to Top"> </el-backtop>
@@ -195,49 +196,55 @@ body {
   min-width: 1200px;
 }
 
-.isFixed .el-menu, .panel {
-    transition: all .6s;
-  }
+.isFixed .el-menu,
+.panel {
+  transition: all 0.6s;
+}
 
 @media (max-width: 20000px) {
-  .isFixed .el-menu, .panel {
+  .isFixed .el-menu,
+  .panel {
     padding: 0 19%;
   }
 }
 
 @media (max-width: 2200px) {
-  .isFixed .el-menu, .panel  {
+  .isFixed .el-menu,
+  .panel {
     padding: 0 15%;
   }
 }
 
 @media (max-width: 2000px) {
-  .isFixed .el-menu, .panel  {
+  .isFixed .el-menu,
+  .panel {
     padding: 0 8%;
   }
 }
 
 @media (max-width: 1800px) {
-  .isFixed .el-menu, .panel  {
+  .isFixed .el-menu,
+  .panel {
     padding: 0 5%;
   }
 }
 
 @media (max-width: 1500px) {
-  .isFixed .el-menu, .panel  {
+  .isFixed .el-menu,
+  .panel {
     padding: 0 1%;
   }
 }
 
 @media (max-width: 1380px) {
-  .isFixed .el-menu, .panel  {
+  .isFixed .el-menu,
+  .panel {
     padding: 0 0%;
   }
 }
 
-
 .intro {
-  font-size: 1.2em;
+  font-size: 1.23em;
   font-weight: 300;
   line-height: 1.6;
   margin-top: 10px;
@@ -248,6 +255,7 @@ body {
 .box-card {
   /* width: 1000px; */
   margin: 35px auto;
+  /* margin-bottom: 35px; */
 }
 
 .title {
@@ -348,7 +356,7 @@ export default {
   data() {
     return {
       activeIndex: null,
-      navPosi: [],
+      navPosi: [0],
       experience: [
         {
           header: "Ph.D. Student",
@@ -382,27 +390,12 @@ export default {
       ],
       articles: [
         {
-          title: "Visualizing the Scripts of Data Wrangling with SOMNUS",
-          authors:
-            "<b>Kai Xiong</b>, Siwei Fu, Guoming Ding, Zhongsu Luo, Rong Yu, Wei Chen, Hujun Bao, Yingcai Wu",
-          journal:
-            "TVCG: IEEE Transactions on Visualization and Computer Graphics",
-          year: 2022,
-          // image: '@/assets/img/somnus.png',
-          image: require("@/assets/img/somnus.png"),
-          info: {
-            paper: "/papers/somnus.pdf",
-            video: "https://youtu.be/fQ-eN_4vhso",
-            github: "https://github.com/xkKevin/Somnus",
-          },
-        },
-        {
           title:
             "Revealing the Semantics of Data Wrangling Scripts With COMANTICS",
           authors:
             "<b>Kai Xiong</b>, Zhongsu Luo, Siwei Fu, Yongheng Wang, Mingliang Xu, Yingcai Wu",
           journal:
-            "TVCG: IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)",
+            "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)",
           year: 2022,
           image: require("@/assets/img/comantics.png"),
           info: {
@@ -425,6 +418,20 @@ export default {
             demo: "https://changevis.github.io/",
           },
         },
+        {
+          title: "Visualizing the Scripts of Data Wrangling with SOMNUS",
+          authors:
+            "<b>Kai Xiong</b>, Siwei Fu, Guoming Ding, Zhongsu Luo, Rong Yu, Wei Chen, Hujun Bao, Yingcai Wu",
+          journal: "IEEE Transactions on Visualization and Computer Graphics",
+          year: 2022,
+          // image: '@/assets/img/somnus.png',
+          image: require("@/assets/img/somnus.png"),
+          info: {
+            paper: "/papers/somnus.pdf",
+            video: "https://youtu.be/fQ-eN_4vhso",
+            github: "https://github.com/xkKevin/Somnus",
+          },
+        },
       ],
     };
   },
@@ -432,11 +439,6 @@ export default {
     window.addEventListener("scroll", () => {
       this.debounce(600)();
     });
-    let sumHeight = 60;
-    for (let i = 1; i <= 3; i++) {
-      sumHeight += document.querySelector(`#C${i}`).scrollHeight + 15;
-      this.navPosi.push(sumHeight);
-    }
   },
   filters: {
     toFirstUpper: (value) => {
@@ -444,16 +446,27 @@ export default {
     },
   },
   methods: {
-    handleSelect(key, keyPath) {
+    calPanelPosi() {
+      let sumHeight = 0;
+      for (let i = 1; i <= 3; i++) {
+        sumHeight += document.querySelector(`#C${i}`).scrollHeight;
+        this.navPosi.push(sumHeight);
+      }
+    },
+    handleSelect(key) {
+      if (this.navPosi.length <= 1) {
+        this.calPanelPosi();
+      }
       // console.log(key, keyPath);
       // https://daily-dev-tips.com/posts/vanilla-javascript-element-scrollintoview/#view-this-smooth-scroll-example-on-codepen
       // document.querySelector(`#${key}`).scrollIntoView({behavior: "smooth"});
       window.scrollTo({
         behavior: "smooth",
         top: Math.floor(
-          document.querySelector(`#C${key}`).getBoundingClientRect().top -
-            document.body.getBoundingClientRect().top -
-            54
+          this.navPosi[key - 1]
+          // document.querySelector(`#C${key}`).getBoundingClientRect().top -
+          //   document.body.getBoundingClientRect().top -
+          //   54
         ),
       });
     },
@@ -468,13 +481,16 @@ export default {
     windowScroll() {
       // 滚动条距离页面顶部的距离
       // 以下写法原生兼容
+      if (this.navPosi.length <= 1) {
+        this.calPanelPosi();
+      }
       let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
       this.navPosi.find((val, index) => {
         if (scrollTop < val) {
-          this.activeIndex = (index + 1).toString();
+          this.activeIndex = index.toString();
           return true;
         }
       });
