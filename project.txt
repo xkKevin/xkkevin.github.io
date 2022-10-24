@@ -5,3 +5,6 @@ Take the hassle out of icons in your website.
 https://fontawesome.com/
 Set Up with Vue: https://fontawesome.com/docs/web/use-with/vue/
 Adding Icon Styling with Vue: https://fontawesome.com/docs/web/use-with/vue/style
+
+让Google搜索到GitHub Pages
+https://saowu.top/blog/4tCVcic30/

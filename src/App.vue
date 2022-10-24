@@ -15,8 +15,8 @@
         </el-menu>
       </el-header>
       <div style="margin-bottom: 52px"></div>
-      <el-container id="C1" class="panel">
-        <el-aside style="padding-top: 30px">
+      <div id="C1" class="panel">
+        <div class="p_aside" style="padding-top: 30px">
           <el-image
             style="width: 180px"
             :src="require('@/assets/img/photo.jpg')"
@@ -47,8 +47,8 @@
             </el-row>
           </div>
           <div></div>
-        </el-aside>
-        <el-main>
+        </div>
+        <div class="p_main">
           <div class="intro">
             <div class="welcome">
               Welcome! <font-awesome-icon icon="fa-solid fa-hands-clapping" />
@@ -63,20 +63,21 @@
             <strong>data wrangling</strong>. I am particularly interested in how
             to assist data workers in understanding the process of data
             transformations.
-            <p style="text-align: right; padding-right: 10px">
+            <p style="text-align: right; padding-right: 15px">
               "It is only with the heart that one can see rightly; what is
               essential is invisible to the eye."
               <br />
               —— <i>The Little Prince</i>
             </p>
           </div>
-        </el-main>
-      </el-container>
-      <el-container id="C2" class="panel">
-        <el-aside>
+        </div>
+      </div>
+      <div id="C2" class="panel">
+        <div class="d_margin"></div>
+        <div class="p_aside">
           <div class="panel-title">Experience</div>
-        </el-aside>
-        <el-main>
+        </div>
+        <div class="p_main">
           <div class="block" style="text-align: left">
             <el-timeline>
               <el-timeline-item
@@ -98,13 +99,15 @@
               </el-timeline-item>
             </el-timeline>
           </div>
-        </el-main>
-      </el-container>
-      <el-container id="C3" class="panel">
-        <el-aside>
+        </div>
+        <div class="d_margin"></div>
+      </div>
+      <div id="C3" class="panel">
+        <div class="d_margin"></div>
+        <div class="p_aside">
           <div class="panel-title">Publications</div>
-        </el-aside>
-        <el-main>
+        </div>
+        <div class="p_main">
           <el-card
             class="box-card"
             v-for="(ai, index) in articles"
@@ -156,8 +159,8 @@
               </el-col>
             </el-row>
           </el-card>
-        </el-main>
-      </el-container>
+        </div>
+      </div>
       <el-footer class="panel">
         <div style="padding-top: 20px; font-size: 15px">
           © 2022 by Kai Xiong. All Rights Reserved.
@@ -193,68 +196,56 @@
 }
 
 body {
-  min-width: 1200px;
+  min-width: 500px;
+}
+
+.d_margin {
+  margin: 30px 0;
 }
 
 .isFixed .el-menu,
 .panel {
-  transition: all 0.6s;
+  transition: all 0.5s;
 }
 
-@media (max-width: 20000px) {
-  .isFixed .el-menu,
-  .panel {
-    padding: 0 19%;
-  }
+.panel {
+  padding-top: 10px;
 }
 
-@media (max-width: 2200px) {
-  .isFixed .el-menu,
-  .panel {
-    padding: 0 15%;
-  }
+.panel .p_aside {
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+}
+.panel .p_main {
+  display: inline-block;
+  width: calc(100% - 300px);
+  vertical-align: top;
 }
 
-@media (max-width: 2000px) {
-  .isFixed .el-menu,
-  .panel {
-    padding: 0 8%;
-  }
+.panel .box-card {
+  margin-left: 35px;
 }
 
-@media (max-width: 1800px) {
-  .isFixed .el-menu,
-  .panel {
-    padding: 0 5%;
+.panel .el-timeline {
+    padding-left: 45px;
   }
-}
 
-@media (max-width: 1500px) {
-  .isFixed .el-menu,
-  .panel {
-    padding: 0 1%;
-  }
-}
-
-@media (max-width: 1380px) {
-  .isFixed .el-menu,
-  .panel {
-    padding: 0 0%;
-  }
-}
 
 .intro {
-  font-size: 1.23em;
+  font-size: 1.24em;
   font-weight: 300;
   line-height: 1.6;
-  margin-top: 10px;
+  margin: 13px;
   text-align: left;
   font-family: inherit;
 }
 
-.box-card {
+.panel .box-card {
   /* width: 1000px; */
-  margin: 35px auto;
+  /* margin: 35px auto; */
+  margin-top: 10px;
+  margin-bottom: 35px;
   /* margin-bottom: 35px; */
 }
 
@@ -287,6 +278,7 @@ body {
   font-size: 50px;
   font-weight: bold;
   font-style: italic;
+  margin-top: 25px;
 }
 
 a {
@@ -321,11 +313,7 @@ a.icon:hover {
   letter-spacing: 0.02em;
   font-size: 42px;
   font-weight: bold;
-  padding-top: 20px;
-}
-
-.panel .el-timeline {
-  padding-left: 50px;
+  margin-bottom: 26px;
 }
 
 .el-timeline-item {
@@ -349,6 +337,73 @@ a.icon:hover {
   height: 100%;
   border-left: 3px solid #e4e7ed;
 }
+
+@media (max-width: 20000px) {
+  .isFixed .el-menu,
+  .panel {
+    padding: 0 19%;
+  }
+}
+
+@media (max-width: 2200px) {
+  .isFixed .el-menu,
+  .panel {
+    padding: 0 15%;
+  }
+}
+
+@media (max-width: 2000px) {
+  .isFixed .el-menu,
+  .panel {
+    padding: 0 10%;
+  }
+}
+
+@media (max-width: 1800px) {
+  .isFixed .el-menu,
+  .panel {
+    padding: 0 8%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .isFixed .el-menu,
+  .panel {
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .isFixed .el-menu,
+  .panel {
+    padding: 0 1%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .isFixed .el-menu,
+  .panel {
+    padding: 0 2%;
+  }
+  .panel .p_aside {
+    display: block;
+    width: 100%;
+  }
+  .panel .p_main {
+    display: block;
+    width: 100%;
+  }
+  .panel .box-card {
+    margin-left: 0;
+  }
+  .panel .el-timeline {
+    padding-left: 10px;
+  }
+  .welcome {
+    margin-top: 0;
+  }
+}
+
 </style>
 
 <script>
@@ -409,12 +464,12 @@ export default {
           authors:
             "Zhongsu Luo, <b>Kai Xiong</b>, Siwei Fu, Yongheng Wang, Hujun Bao, Yingcai Wu",
           journal:
-            "Journal of Computer-Aided Design & Computer Graphics (China VIS)",
+            "Journal of Computer-Aided Design & Computer Graphics (ChinaVIS)",
           year: 2022,
           image: require("@/assets/img/ChangeVis.jpg"),
           info: {
             paper: "/papers/ChangeVis.pdf",
-            video: "#",
+            video: "https://youtu.be/qiMpa6M-jwk",
             demo: "https://changevis.github.io/",
           },
         },
