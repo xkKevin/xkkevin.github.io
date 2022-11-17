@@ -153,6 +153,10 @@
                       ><font-awesome-icon icon="fa-brands fa-github" />
                       {{ key | toFirstUpper }}</a
                     >
+                    <a :href="value" v-if="key === 'slide'"
+                      ><font-awesome-icon icon="fa-solid fa-file-powerpoint" />
+                      {{ key | toFirstUpper }}</a
+                    >
                     ]
                   </span>
                 </div>
@@ -425,7 +429,7 @@ export default {
           header: "Research Intern",
           content:
             '<a href="https://jianwei.zjvis.net/">Jianwei Group</a>, <a href="http://www.zhejianglab.com/">Zhejiang Lab</a>',
-          timestamp: "Apr. 2020 - Present ● Hangzhou, China",
+          timestamp: "Apr. 2020 - Nov. 2022 ● Hangzhou, China",
           size: "large",
           color: "#2962ff",
         },
@@ -456,6 +460,7 @@ export default {
           info: {
             paper: "/papers/comantics.pdf",
             video: "https://youtu.be/acVSqJQ3jnQ",
+            slide: "/slides/comantics.pptx",
           },
         },
         {
@@ -485,6 +490,7 @@ export default {
             paper: "/papers/somnus.pdf",
             video: "https://youtu.be/fQ-eN_4vhso",
             github: "https://github.com/xkKevin/Somnus",
+            slide: "/slides/somnus.pptx",
           },
         },
       ],
