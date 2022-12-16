@@ -10,8 +10,9 @@
           active-text-color="#2962ff"
         >
           <el-menu-item index="1">About Me</el-menu-item>
-          <el-menu-item index="2">Experience</el-menu-item>
-          <el-menu-item index="3">Publications</el-menu-item>
+          <el-menu-item index="2">News</el-menu-item>
+          <el-menu-item index="3">Experience</el-menu-item>
+          <el-menu-item index="4">Publications</el-menu-item>
         </el-menu>
       </el-header>
       <div style="margin-bottom: 52px"></div>
@@ -75,6 +76,14 @@
       <div id="C2" class="panel">
         <div class="d_margin"></div>
         <div class="p_aside">
+          <div class="panel-title">News</div>
+        </div>
+        <div class="p_main">
+        </div>
+      </div>
+      <div id="C3" class="panel">
+        <div class="d_margin"></div>
+        <div class="p_aside">
           <div class="panel-title">Experience</div>
         </div>
         <div class="p_main">
@@ -90,19 +99,29 @@
                 :size="ei.size"
                 :timestamp="ei.timestamp"
               >
-                <el-card>
-                  <div slot="header">
-                    <strong>{{ ei.header }}</strong>
-                  </div>
-                  <div v-html="ei.content"></div>
-                </el-card>
+              <div>
+                <div class="experience_pos">
+                  <el-card>
+                    <div slot="header">
+                      <strong>{{ ei.header }}</strong>
+                    </div>
+                    <div v-html="ei.content"></div>
+                  </el-card>
+                </div>
+                <div class="experience_pos_icon">
+                  <el-image
+                    :src="ei.icon"
+                    :preview-src-list="experience.map(ele=>ele.icon)"
+                    ></el-image>
+                </div>
+              </div>
               </el-timeline-item>
             </el-timeline>
           </div>
         </div>
         <div class="d_margin"></div>
       </div>
-      <div id="C3" class="panel">
+      <div id="C4" class="panel">
         <div class="d_margin"></div>
         <div class="p_aside">
           <div class="panel-title">Publications</div>
@@ -117,7 +136,7 @@
               <el-col :span="7">
                 <el-image
                   :src="ai.image"
-                  :preview-src-list="[ai.image]"
+                  :preview-src-list="articles.map(ele=>ele.image)"
                 ></el-image>
               </el-col>
               <el-col
@@ -176,6 +195,28 @@
 </template>
 
 <style>
+/* #C3 .el-card__body {
+  padding: 5px 15px;
+} */
+
+.experience_pos {
+  display: inline-block;
+  width: calc(100% - 105px);
+  margin-right: 10px;
+  /* vertical-align: super; */
+  /* height: 40px;
+  line-height: 40px; */
+}
+
+.experience_pos_icon {
+  display: inline-block;
+  /* float: right; */
+  width: 92px;
+  vertical-align: 1ch;
+  /* margin-top: 15px; */
+  /* margin-right: 1px; */
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -421,6 +462,7 @@ export default {
           header: "Ph.D. Student",
           content:
             "College of Computer Science and Technology, Zhejiang University",
+          icon: require("@/assets/img/pos/zju.jpeg"),
           timestamp: "Sept. 2020 - Present ● Hangzhou, China",
           size: "large",
           color: "#2962ff",
@@ -429,20 +471,31 @@ export default {
           header: "Research Intern",
           content:
             '<a href="https://jianwei.zjvis.net/">Jianwei Group</a>, <a href="http://www.zhejianglab.com/">Zhejiang Lab</a>',
+          icon: require("@/assets/img/pos/zjl.jpeg"),
           timestamp: "Apr. 2020 - Nov. 2022 ● Hangzhou, China",
           size: "large",
-          color: "#2962ff",
+          // color: "#2962ff",
         },
         {
           header: "Postgraduate Student",
           content: "School of Software Technology, Zhejiang University",
+          icon: require("@/assets/img/pos/zju.jpeg"),
           timestamp: "Sept. 2019 - Jun. 2020 ● Ningbo, China",
+          size: "large",
+        },
+        {
+          header: "Interdisciplinary Research Collaboration",
+          content:
+            "Epilepsy Center, Department of Neurology, Second Affiliated Hospital Zhejiang University School of Medicine",
+          icon: require("@/assets/img/pos/sahzju.jpeg"),
+          timestamp: "Jan. 2019 - Aug. 2020 ● Hangzhou, China",
           size: "large",
         },
         {
           header: "Undergraduate Student",
           content:
             "School of Computer Science and Technology, Xidian University",
+          icon: require("@/assets/img/pos/xdu.jpeg"),
           timestamp: "Aug. 2015 - Jun. 2019 ● Xi'an, China",
           size: "large",
         },
@@ -509,7 +562,7 @@ export default {
   methods: {
     calPanelPosi() {
       let sumHeight = 0;
-      for (let i = 1; i <= 3; i++) {
+      for (let i = 1; i <= 4; i++) {
         sumHeight += document.querySelector(`#C${i}`).scrollHeight;
         this.navPosi.push(sumHeight);
       }
