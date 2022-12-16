@@ -79,6 +79,22 @@
           <div class="panel-title">News</div>
         </div>
         <div class="p_main">
+          <div v-for="(ni, index) in news" :key="index" style="margin-bottom: 12px;">
+            <div style="display: inline-block; width: 120px; vertical-align: top;">
+              {{ ni.date }}
+            </div>
+            <div style="display: inline-block; width: calc(100% - 120px);">
+              <div style="margin-right: 15px">
+                <span v-html="ni.text"></span>
+                <span>&nbsp;
+                  <span v-for="(value, key, obj_index) in ni.info" :key="obj_index" style="display: inline-block;">
+                    [ <a :href="value">{{key}}</a> ]&nbsp;
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div style="height: 8px; margin-top:20px;"></div>
         </div>
       </div>
       <div id="C3" class="panel">
@@ -133,14 +149,18 @@
             :key="index"
           >
             <el-row>
-              <el-col :span="7">
+              <el-col :span="7" v-if="ai.image">
                 <el-image
                   :src="ai.image"
-                  :preview-src-list="articles.map(ele=>ele.image)"
-                ></el-image>
+                  :preview-src-list="articles.map(ele=>ele.image).filter(i=>i)"
+                >
+                  <div slot="error" class="image-slot">
+                    <i class="el-icon-picture-outline">&nbsp;None</i>
+                  </div>
+                </el-image>
               </el-col>
               <el-col
-                :span="17"
+                :span="ai.image?17:24"
                 style="text-align: left; padding: 8px 0 0 28px"
               >
                 <div class="title">{{ ai.title }}</div>
@@ -156,6 +176,10 @@
                     :key="obj_index"
                   >
                     [
+                    <a :href="value" v-if="key === 'DOI'"
+                      ><font-awesome-icon icon="fa-solid fa-book" />
+                      {{ key | toFirstUpper }}</a
+                    >
                     <a :href="value" v-if="key === 'paper'"
                       ><font-awesome-icon icon="fa-solid fa-file" />
                       {{ key | toFirstUpper }}</a
@@ -195,6 +219,10 @@
 </template>
 
 <style>
+.isFixed .el-menu-item {
+  padding: 0 13px;
+}
+
 /* #C3 .el-card__body {
   padding: 5px 15px;
 } */
@@ -202,7 +230,7 @@
 .experience_pos {
   display: inline-block;
   width: calc(100% - 105px);
-  margin-right: 10px;
+  margin-right: 11px;
   /* vertical-align: super; */
   /* height: 40px;
   line-height: 40px; */
@@ -324,6 +352,10 @@ body {
   font-weight: bold;
   font-style: italic;
   margin-top: 25px;
+}
+
+.p_main {
+  text-align: left;
 }
 
 a {
@@ -457,6 +489,16 @@ export default {
     return {
       activeIndex: null,
       navPosi: [0],
+      news: [
+        {
+          date: "Nov 22, 2022",
+          text: `I delivered a speech titled "<b>Understanding the Semantics of Data Wrangling Scripts</b>" at the Visualization session of the 15th <a href="http://china-r.org/">China-R Conference</a>.`,
+          info: {
+            "Talk": "https://www.bilibili.com/video/BV1t3411f7Ra",
+            "Slide": "/news/china-r-talk.pdf",
+          }
+        },
+      ],
       experience: [
         {
           header: "Ph.D. Student",
@@ -503,6 +545,20 @@ export default {
       articles: [
         {
           title:
+            "Ictal EEG desynchronization during low-voltage fast activity for prediction of surgical outcomes in focal epilepsy",
+          authors:
+            "Lingli Hu, <b>Kai Xiong</b>, Lingqi Ye, Yuyu Yang, Cong Chen, Shan Wang, Yao Ding, Zhongjin Wang, Wenjie Ming, Zhe Zheng, Hongjie Jiang, Hong Li, Junming Zhu, Cenglin Xu, Yi Wang, Meiping Ding, Zhong Chen, Yingcai Wu, Shuang Wang",
+          journal:
+            "Journal of Neurosurgery (JNS)",
+          year: 2022,
+          // image: '',
+          info: {
+            DOI: "https://doi.org/10.3171/2022.11.JNS221469",
+            paper: "https://thejns.org/view/journals/j-neurosurg/aop/article-10.3171-2022.11.JNS221469/article-10.3171-2022.11.JNS221469.xml",
+          },
+        },
+        {
+          title:
             "Revealing the Semantics of Data Wrangling Scripts With COMANTICS",
           authors:
             "<b>Kai Xiong</b>, Zhongsu Luo, Siwei Fu, Yongheng Wang, Mingliang Xu, Yingcai Wu",
@@ -511,6 +567,7 @@ export default {
           year: 2022,
           image: require("@/assets/img/comantics.png"),
           info: {
+            DOI: "https://doi.org/10.1109/TVCG.2022.3209470",
             paper: "/papers/comantics.pdf",
             video: "https://youtu.be/acVSqJQ3jnQ",
             slide: "/slides/comantics.pptx",
@@ -535,11 +592,12 @@ export default {
           title: "Visualizing the Scripts of Data Wrangling with SOMNUS",
           authors:
             "<b>Kai Xiong</b>, Siwei Fu, Guoming Ding, Zhongsu Luo, Rong Yu, Wei Chen, Hujun Bao, Yingcai Wu",
-          journal: "IEEE Transactions on Visualization and Computer Graphics",
+          journal: "IEEE Transactions on Visualization and Computer Graphics (IEEE TVCG)",
           year: 2022,
           // image: '@/assets/img/somnus.png',
           image: require("@/assets/img/somnus.png"),
           info: {
+            DOI: "https://doi.org/10.1109/TVCG.2022.3144975",
             paper: "/papers/somnus.pdf",
             video: "https://youtu.be/fQ-eN_4vhso",
             github: "https://github.com/xkKevin/Somnus",

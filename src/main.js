@@ -15,13 +15,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faEnvelope, faGraduationCap, faHandsClapping, faVideo, faFile, faCube, faFilePowerpoint } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faGraduationCap, faHandsClapping, faVideo, faFile, faCube, faFilePowerpoint, faBook } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 // import { faFile } from '@fortawesome/free-regular-svg-icons'
 
 
 /* add icons to the library */
-library.add(faEnvelope, faGithub, faGraduationCap, faHandsClapping, faFile, faVideo, faCube, faFilePowerpoint)
+library.add(faEnvelope, faGithub, faGraduationCap, faHandsClapping, faFile, faVideo, faCube, faFilePowerpoint, faBook)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)
