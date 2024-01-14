@@ -12,7 +12,7 @@
           <el-menu-item index="1">About Me</el-menu-item>
           <el-menu-item index="2">News</el-menu-item>
           <el-menu-item index="3">Experience</el-menu-item>
-          <el-menu-item index="4">Publication</el-menu-item>
+          <el-menu-item index="4">Publications</el-menu-item>
         </el-menu>
       </el-header>
       <div style="margin-bottom: 52px"></div>
@@ -54,13 +54,13 @@
             <div class="welcome">
               Welcome! <font-awesome-icon icon="fa-solid fa-hands-clapping" />
             </div>
-            I am a Ph.D. candidate of Com­puter Sci­ence at the State Key Lab of
+            I am a Ph.D. student of Com­puter Sci­ence at the State Key Lab of
             CAD&CG, Zhejiang University, under the supervision of
             <a href="http://www.ycwu.org/">Prof. Yingcai Wu</a>. I am also a
             member of <a href="https://zjuidg.org/">ZJUIDG Group</a>. I received
             my bachelor's degree in Computer Science from Xidian University. My
             main research interests center on
-            <strong>information visualization</strong> and
+            <strong>visual analytics</strong> and
             <strong>data wrangling</strong>. I am particularly interested in how
             to assist data workers in understanding the process of data
             transformations.
@@ -80,10 +80,10 @@
         </div>
         <div class="p_main">
           <div v-for="(ni, index) in news" :key="index" style="margin-bottom: 12px;">
-            <div style="display: inline-block; width: 128px; vertical-align: top;">
+            <div style="display: inline-block; width: 120px; vertical-align: top;">
               {{ ni.date }}
             </div>
-            <div style="display: inline-block; width: calc(100% - 128px);">
+            <div style="display: inline-block; width: calc(100% - 120px);">
               <div style="margin-right: 15px">
                 <span v-html="ni.text"></span>
                 <span>&nbsp;
@@ -140,7 +140,7 @@
       <div id="C4" class="panel">
         <div class="d_margin"></div>
         <div class="p_aside">
-          <div class="panel-title">Publication</div>
+          <div class="panel-title">Publications</div>
         </div>
         <div class="p_main">
           <el-card
@@ -210,7 +210,7 @@
       </div>
       <el-footer class="panel">
         <div style="padding-top: 20px; font-size: 15px">
-          © <span>{{new Date().getFullYear()}}</span> by Kai Xiong. All Rights Reserved.
+          © 2022 by Kai Xiong. All Rights Reserved.
         </div>
       </el-footer>
       <el-backtop title="Back to Top"> </el-backtop>
@@ -500,7 +500,7 @@ export default {
         },
         {
           date: "Oct 22-27, 2023",
-          text: `I attended the <a href="https://ieeevis.org/year/2023/welcome">IEEE VIS 2023 Conference</a> in Melbourne, Australia.`,
+          text: `I attended the IEEE VIS 2023 Conference in Melbourne, Australia.`,
         },
       ],
       experience: [
@@ -548,11 +548,56 @@ export default {
       ],
       articles: [
         {
-          title: "Visualizing the Scripts of Data Wrangling With SOMNUS",
+          title:
+            "Ictal EEG desynchronization during low-voltage fast activity for prediction of surgical outcomes in focal epilepsy",
+          authors:
+            "Lingli Hu, <b>Kai Xiong</b>, Lingqi Ye, Yuyu Yang, Cong Chen, Shan Wang, Yao Ding, Zhongjin Wang, Wenjie Ming, Zhe Zheng, Hongjie Jiang, Hong Li, Junming Zhu, Cenglin Xu, Yi Wang, Meiping Ding, Zhong Chen, Yingcai Wu, Shuang Wang",
+          journal:
+            "Journal of Neurosurgery (JNS)",
+          year: 2022,
+          // image: '',
+          info: {
+            DOI: "https://doi.org/10.3171/2022.11.JNS221469",
+            paper: "https://thejns.org/view/journals/j-neurosurg/aop/article-10.3171-2022.11.JNS221469/article-10.3171-2022.11.JNS221469.xml",
+          },
+        },
+        {
+          title:
+            "Revealing the Semantics of Data Wrangling Scripts With COMANTICS",
+          authors:
+            "<b>Kai Xiong</b>, Zhongsu Luo, Siwei Fu, Yongheng Wang, Mingliang Xu, Yingcai Wu",
+          journal:
+            "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)",
+          year: 2022,
+          image: require("@/assets/img/comantics.png"),
+          info: {
+            DOI: "https://doi.org/10.1109/TVCG.2022.3209470",
+            paper: "/papers/comantics.pdf",
+            video: "https://youtu.be/acVSqJQ3jnQ",
+            slide: "/slides/comantics.pptx",
+          },
+        },
+        {
+          title: "Visualizing the Semantics of Data Wrangling Scripts",
+          subtitle: "数据整理脚本语义的可视化",
+          authors:
+            "Zhongsu Luo, <b>Kai Xiong</b>, Siwei Fu, Yongheng Wang, Hujun Bao, Yingcai Wu",
+          journal:
+            "Journal of Computer-Aided Design & Computer Graphics (ChinaVIS)",
+          year: 2022,
+          image: require("@/assets/img/ChangeVis.jpg"),
+          info: {
+            paper: "/papers/ChangeVis.pdf",
+            video: "https://youtu.be/qiMpa6M-jwk",
+            demo: "https://changevis.github.io/",
+          },
+        },
+        {
+          title: "Visualizing the Scripts of Data Wrangling with SOMNUS",
           authors:
             "<b>Kai Xiong</b>, Siwei Fu, Guoming Ding, Zhongsu Luo, Rong Yu, Wei Chen, Hujun Bao, Yingcai Wu",
           journal: "IEEE Transactions on Visualization and Computer Graphics (IEEE TVCG)",
-          year: 2023,
+          year: 2022,
           // image: '@/assets/img/somnus.png',
           image: require("@/assets/img/somnus.png"),
           info: {
