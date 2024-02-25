@@ -491,6 +491,14 @@ export default {
       navPosi: [0],
       news: [
         {
+          date: "Feb 26, 2024",
+          text: `Fly to Melbourne and engage in a six-month exchange program as a visiting Ph.D. student under the guidance of <a href="https://users.monash.edu/~mwybrow/">Assoc. Prof. Michael Wyrow</a> at Monash University.`
+        },
+        {
+          date: "Oct 22-27, 2023",
+          text: `I attended the <a href="https://ieeevis.org/year/2023/welcome">IEEE VIS 2023 Conference</a> in Melbourne, Australia.`,
+        },
+        {
           date: "Nov 22, 2022",
           text: `I delivered a speech titled "<b>Understanding the Semantics of Data Wrangling Scripts</b>" at the Visualization session of the 15th <a href="http://china-r.org/">China-R Conference</a>.`,
           info: {
@@ -498,12 +506,17 @@ export default {
             "Slide": "/news/china-r-talk.pdf",
           }
         },
-        {
-          date: "Oct 22-27, 2023",
-          text: `I attended the <a href="https://ieeevis.org/year/2023/welcome">IEEE VIS 2023 Conference</a> in Melbourne, Australia.`,
-        },
       ],
       experience: [
+        {
+          header: "Visiting Ph.D. Student",
+          content:
+            "<a href='https://www.monash.edu/it/hcc/embodied-visualisation'>Embodied Visualisation Research Group</a>, Faculty of Information Technology, Monash University",
+          icon: require("@/assets/img/pos/monash.jpg"),
+          timestamp: "Feb. 2024 - Sept. 2024 ● Melbourne, Australia",
+          size: "large",
+          color: "#2962ff",
+        },
         {
           header: "Ph.D. Student",
           content:
@@ -548,11 +561,70 @@ export default {
       ],
       articles: [
         {
-          title: "Visualizing the Scripts of Data Wrangling With SOMNUS",
+          title:
+            "JsonCurer: Data Quality Management for JSON Based on an Aggregated Schema",
+          authors:
+            "<b>Kai Xiong</b>, Xinyi Xu, Siwei Fu, Di Weng, Yongheng Wang, Yingcai Wu",
+          journal:
+            "IEEE Transactions on Visualization and Computer Graphics (IEEE PacificVis)",
+          year: 2024,
+          image: require("@/assets/img/JsonCurer.png"),
+          info: {
+            paper: "/papers/jsoncurer.pdf",
+            github: "https://github.com/changevis/JsonCurer",
+          },
+        },
+        {
+          title:
+            "Revealing the Semantics of Data Wrangling Scripts With COMANTICS",
+          authors:
+            "<b>Kai Xiong</b>, Zhongsu Luo, Siwei Fu, Yongheng Wang, Mingliang Xu, Yingcai Wu",
+          journal:
+            "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)",
+          year: 2023,
+          image: require("@/assets/img/comantics.png"),
+          info: {
+            DOI: "https://doi.org/10.1109/TVCG.2022.3209470",
+            paper: "/papers/comantics.pdf",
+            video: "https://youtu.be/acVSqJQ3jnQ",
+            slide: "/slides/comantics.pptx",
+          },
+        },
+        {
+          title: "Visualizing the Semantics of Data Wrangling Scripts",
+          subtitle: "数据整理脚本语义的可视化",
+          authors:
+            "Zhongsu Luo, <b>Kai Xiong</b>, Siwei Fu, Yongheng Wang, Hujun Bao, Yingcai Wu",
+          journal:
+            "Journal of Computer-Aided Design & Computer Graphics (ChinaVIS)",
+          year: 2023,
+          image: require("@/assets/img/ChangeVis.jpg"),
+          info: {
+            paper: "/papers/ChangeVis.pdf",
+            video: "https://youtu.be/qiMpa6M-jwk",
+            demo: "https://changevis.github.io/",
+          },
+        },
+        {
+          title:
+            "Ictal EEG desynchronization during low-voltage fast activity for prediction of surgical outcomes in focal epilepsy",
+          authors:
+            "Lingli Hu, <b>Kai Xiong</b>, Lingqi Ye, Yuyu Yang, Cong Chen, Shan Wang, Yao Ding, Zhongjin Wang, Wenjie Ming, Zhe Zheng, Hongjie Jiang, Hong Li, Junming Zhu, Cenglin Xu, Yi Wang, Meiping Ding, Zhong Chen, Yingcai Wu, Shuang Wang",
+          journal:
+            "Journal of Neurosurgery (JNS)",
+          year: 2022,
+          // image: '',
+          info: {
+            DOI: "https://doi.org/10.3171/2022.11.JNS221469",
+            paper: "https://thejns.org/view/journals/j-neurosurg/aop/article-10.3171-2022.11.JNS221469/article-10.3171-2022.11.JNS221469.xml",
+          },
+        },
+        {
+          title: "Visualizing the Scripts of Data Wrangling with SOMNUS",
           authors:
             "<b>Kai Xiong</b>, Siwei Fu, Guoming Ding, Zhongsu Luo, Rong Yu, Wei Chen, Hujun Bao, Yingcai Wu",
           journal: "IEEE Transactions on Visualization and Computer Graphics (IEEE TVCG)",
-          year: 2023,
+          year: 2022,
           // image: '@/assets/img/somnus.png',
           image: require("@/assets/img/somnus.png"),
           info: {
