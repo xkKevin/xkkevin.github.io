@@ -17,11 +17,11 @@ import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fort
 /* import specific icons */
 import { faEnvelope, faGraduationCap, faHandsClapping, faVideo, faFile, faCube, faFilePowerpoint, faBook } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-// import { faFile } from '@fortawesome/free-regular-svg-icons'
+import { faFolderOpen } from '@fortawesome/free-regular-svg-icons'
 
 
 /* add icons to the library */
-library.add(faEnvelope, faGithub, faGraduationCap, faHandsClapping, faFile, faVideo, faCube, faFilePowerpoint, faBook)
+library.add(faEnvelope, faGithub, faGraduationCap, faHandsClapping, faFile, faVideo, faCube, faFilePowerpoint, faBook, faFolderOpen)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

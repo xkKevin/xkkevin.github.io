@@ -60,10 +60,13 @@
             member of <a href="https://zjuidg.org/">ZJUIDG Group</a>. I received
             my bachelor's degree in Computer Science from Xidian University. My
             main research interests center on
-            <strong>information visualization</strong> and
-            <strong>data wrangling</strong>. I am particularly interested in how
-            to assist data workers in understanding the process of data
-            transformations.
+            <strong>visual analytics</strong> and
+            <strong>data wrangling</strong>. 
+            Particularly, I am interested in how to assist data workers in understanding 
+            the process of data transformations and improving the quality of data.
+            <!-- Use “enhance” to talk about making a good thing even better. 
+            Use “improve” to talk about making a thing better that is not so good now. 
+            Use “increase” when you want to talk about larger numbers or amounts. -->
             <p style="text-align: right; padding-right: 15px">
               "It is only with the heart that one can see rightly; what is
               essential is invisible to the eye."
@@ -192,8 +195,12 @@
                       ><font-awesome-icon icon="fa-solid fa-cube" />
                       {{ key | toFirstUpper }}</a
                     >
-                    <a :href="value" v-if="key === 'github'"
+                    <a :href="value" v-if="key === 'github' || key === 'code'"
                       ><font-awesome-icon icon="fa-brands fa-github" />
+                      {{ key | toFirstUpper }}</a
+                    >
+                    <a :href="value" v-if="key === 'material'"
+                      ><font-awesome-icon icon="fa-regular fa-folder-open" />
                       {{ key | toFirstUpper }}</a
                     >
                     <a :href="value" v-if="key === 'slide'"
@@ -491,16 +498,20 @@ export default {
       navPosi: [0],
       news: [
         {
+          date: "Apr 23-26, 2024",
+          text: `Attend the <a href="https://pacificvis.github.io/pvis2024/">IEEE 17th Pacific Visualization Conference</a> at Keio University, Tokyo, Japan, and present my latest paper titled "<b>JsonCurer: Data Quality Management for JSON Based on an Aggregated Schema</b>" at the conference.`,
+        },
+        {
           date: "Feb 26, 2024",
-          text: `Fly to Melbourne and engage in a six-month exchange program as a visiting Ph.D. student under the guidance of <a href="https://users.monash.edu/~mwybrow/">Assoc. Prof. Michael Wyrow</a> at Monash University.`
+          text: `Fly to Melbourne and engage in a six-month exchange program as a visiting Ph.D. student under the guidance of <a href="https://users.monash.edu/~mwybrow/">Assoc. Prof. Michael Wybrow</a> at Monash University.`
         },
         {
           date: "Oct 22-27, 2023",
-          text: `I attended the <a href="https://ieeevis.org/year/2023/welcome">IEEE VIS 2023 Conference</a> in Melbourne, Australia.`,
+          text: `Attend the <a href="https://ieeevis.org/year/2023/welcome">IEEE VIS 2023 Conference</a> in Melbourne, Australia.`,
         },
         {
           date: "Nov 22, 2022",
-          text: `I delivered a speech titled "<b>Understanding the Semantics of Data Wrangling Scripts</b>" at the Visualization session of the 15th <a href="http://china-r.org/">China-R Conference</a>.`,
+          text: `Deliver a speech titled "<b>Understanding the Semantics of Data Wrangling Scripts</b>" at the Visualization session of the 15th <a href="http://china-r.org/">China-R Conference</a>.`,
           info: {
             "Talk": "https://www.bilibili.com/video/BV1t3411f7Ra",
             "Slide": "/news/china-r-talk.pdf",
@@ -571,7 +582,7 @@ export default {
           image: require("@/assets/img/JsonCurer.png"),
           info: {
             paper: "/papers/jsoncurer.pdf",
-            github: "https://github.com/changevis/JsonCurer",
+            code: "https://github.com/changevis/JsonCurer",
           },
         },
         {
@@ -603,6 +614,21 @@ export default {
             paper: "/papers/ChangeVis.pdf",
             video: "https://youtu.be/qiMpa6M-jwk",
             demo: "https://changevis.github.io/",
+            slide: "/slides/changevis.pptx",
+          },
+        },
+        {
+          title:
+            "Pre-ictal fluctuation of EEG functional connectivity discriminates seizure phenotypes in mesial temporal lobe epilepsy",
+          authors:
+            "Hongyi Ye, Chenmin He, Wenhan Hu, <b>Kai Xiong</b>, Lingli Hu, Cong Chen, Sha Xu, Cenglin Xu, Yi Wang, Yao Ding, Yingcai Wu, Kai Zhang, Shan Wang, Shuang Wang",
+          journal:
+            "Clinical Neurophysiology",
+          year: 2023,
+          // image: '',
+          info: {
+            DOI: "https://doi.org/10.1016/j.clinph.2023.05.004",
+            paper: "https://www.sciencedirect.com/science/article/abs/pii/S1388245723006223",
           },
         },
         {
@@ -631,7 +657,8 @@ export default {
             DOI: "https://doi.org/10.1109/TVCG.2022.3144975",
             paper: "/papers/somnus.pdf",
             video: "https://youtu.be/fQ-eN_4vhso",
-            github: "https://github.com/xkKevin/Somnus",
+            code: "https://github.com/xkKevin/Somnus-code",
+            material: "https://github.com/xkKevin/Somnus",
             slide: "/slides/somnus.pptx",
           },
         },
